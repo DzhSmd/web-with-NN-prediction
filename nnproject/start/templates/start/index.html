@@ -1,0 +1,67 @@
+{% extends 'start/layout.html' %}
+
+{% block title %}Калькулятор вашей цели{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Калькулятор вашей цели</h1>
+        <p>Внесите данные в зависимости от вашей цели </p>
+        <p>Накопления </p>
+<!--        <form>-->
+<!--                <div class="btn-group dropright">-->
+<!--                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--                         Select an option-->
+<!--                    </button>-->
+<!--                    <div class="dropdown-menu">-->
+<!--                        <h6 class="dropdown-header">Group 1</h6>-->
+<!--                        {% for option in form.options.group1 %}-->
+<!--                            <a class="dropdown-item" href="#">{{ option }}</a>-->
+<!--                         {% endfor %}-->
+<!--                        <div class="dropdown-divider"></div>-->
+<!--                            <h6 class="dropdown-header">Group 2</h6>-->
+<!--                                {% for option in form.options.group2 %}-->
+<!--                                        <a class="dropdown-item" href="#">{{ option }}</a>-->
+<!--                                {% endfor %}-->
+<!--                        </div>-->
+<!--                </div>-->
+<!--        </form>-->
+
+        <form method="post">
+            {% csrf_token %}
+<!--            <button class="btn btn-warning">Сосчитать</button>-->
+<!--            <script>-->
+<!--                let button = document.getElementById("myButton");-->
+<!--                let x = 0;-->
+<!--                let speed = 2;-->
+
+<!--                function moveButton() {-->
+<!--                    x += speed;-->
+<!--                    button.style.left = x + "px";-->
+<!--                    if (x > window.innerWidth - button.offsetWidth || x < 0) {-->
+<!--                        speed = -speed;-->
+<!--                    }-->
+<!--                }-->
+<!--            </script>-->
+<!--            <button id="myButton" onclick="moveButton()">Click me!</button>-->
+<!--            <button id="myButton1" onclick="moveButton()">Click me1!</button>-->
+
+            <table>
+                 {{ form.as_table }}
+            </table>
+<!--            <span>{{error}}</span>-->
+            <button class="btn btn-success" type="submit">Сосчитать</button>
+        </form>
+<!--        <p>Пасиивный доход </p>-->
+<!--        <form method="post">-->
+<!--            {% csrf_token %}-->
+<!--            <input type="number" placeholder="Желаемый пассивный доход в месяц" class="form-control"><br>-->
+<!--            <input type="number" placeholder="Количество лет" class="form-control"><br>-->
+<!--            <input type="number" placeholder="Среднегодовая ставка инфляции" class="form-control"><br>-->
+<!--            <input type="number" placeholder="Среднегодовая ставка доходности" class="form-control"><br>-->
+<!--            <input type="number" placeholder="Сумма стартового капитала" class="form-control"><br>-->
+<!--            <button class="btn btn-success" type="submit">Сосчитать</button>-->
+<!--        </form>-->
+
+    </div>
+{% endblock %}
+<!--<a href="{% url 'result' %}"><li><button class="btn btn-warning">Сосчитать</button></li></a>-->

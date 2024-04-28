@@ -1,0 +1,80 @@
+body{
+    background: #EAE7DC;
+}
+
+body .features {
+    float: left;
+    font-family: Courier, sans-serif;
+    color: #E98074;
+    margin-top: 50px;
+    text-align: center;
+    width: 70%;
+}
+body .features h1 {font-size: 50px;}
+body .features p {max-width: 400px; margin: 20px auto;}
+
+body .results {
+    float: left;
+    font-family: Courier, sans-serif;
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 100%;
+}
+body .results h1 {
+    font-size: 50px;
+    text-align: center;
+    color: #E98074;
+}
+
+body .results p {
+    margin: 20px;
+    font-size: 20px;
+    color: #8E8D8A;
+}
+.condition{
+    text-align: center;
+    font-size: 25px;
+    color: #E98074;
+}
+
+/*
+aside{
+    float: right;
+    background: #D8C3A5;
+    width: 20%;
+    padding: 2.5%;
+    height: 100vh;
+    color: #fff;
+    border-left: 5px solid #48036F;
+}
+aside img {
+    width: 80px;
+    float: right;
+}
+aside .logo{
+    font-size: 40px;
+    margin-right: 10px;
+    font-weight: bold;
+    position: relative;
+    top: -5px;
+}
+aside h3{
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+aside ul {list-style: none}
+aside ul li {
+    color: #E98074;
+    display: block;
+    margin-top: 20px;
+    transition: transform .6s ease;
+}
+
+aside ul li:hover, aside ul a:hover {
+    color: #E98074;
+    transform: scale(1.05);
+}
+aside ul li:link, aside ul a:link {
+  text-decoration: none;
+}*/

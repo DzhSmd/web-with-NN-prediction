@@ -1,0 +1,71 @@
+{% extends 'start/layout.html' %}
+
+{% block title %}Результат{% endblock %}
+
+{% block content %}
+    <div class="results">
+        <h1>Результат</h1>
+        <p>Твоя цель: накопить {{target}} рублей</p>
+        <p>За {{period}} лет при годовой доходности ваших инвестиций {{ profit }} % вы накопите {{ future_value }} рублей. </p>
+        <p>Чтобы достигнуть цели Вам нужно вносить: </p>
+        <div class="condition">
+            Единоразово: {{present_value}} или
+            {% if  start_sum != 0 %}
+                Ежегодно: {{r_with_start_sum_year}} или Ежемесячно: {{r_with_start_sum_month}}
+            {% else %}
+                Ежегодно: {{r_without_start_sum_year}} или Ежемесячно: {{r_without_start_sum_month}}
+            {% endif %}
+        </div>
+
+        <p>
+            На {{present_value}} можно купить такие ценные бумаги:
+
+        </p>
+
+        <p>
+            {% if  start_sum != 0 %}
+                На {{r_with_start_sum_year}} можно купить такие ценные бумаги:
+
+            {% else %}
+                На {{r_without_start_sum_year}} можно купить такие ценные бумаги:
+
+            {% endif %}
+
+        </p>
+
+        <p>
+            {% if  start_sum != 0 %}
+                На {{r_with_start_sum_month}} можно купить такие ценные бумаги:
+
+            {% else %}
+                На {{r_without_start_sum_month}} можно купить такие ценные бумаги:
+
+            {% endif %}
+
+        </p>
+<!--        <div class="single_investment">-->
+<!--            На {{present_value}} можно купить такие ценные бумаги:-->
+
+<!--        </div>-->
+<!--        <div class="each_year_investment">-->
+<!--            {% if  start_sum != 0 %}-->
+<!--                На {{r_with_start_sum_year}} можно купить такие ценные бумаги:-->
+
+<!--            {% else %}-->
+<!--                На {{r_without_start_sum_year}} можно купить такие ценные бумаги:-->
+
+<!--            {% endif %}-->
+
+<!--        </div>-->
+<!--        <div class="each_month_investment">-->
+<!--            {% if  start_sum != 0 %}-->
+<!--                На {{r_with_start_sum_month}} можно купить такие ценные бумаги:-->
+
+<!--            {% else %}-->
+<!--                На {{r_without_start_sum_month}} можно купить такие ценные бумаги:-->
+
+<!--            {% endif %}-->
+<!--        </div>-->
+        <a href="{% url 'start' %}" class="btn btn-success">Вернуться к вводу данных</a>
+    </div>
+{% endblock %}
