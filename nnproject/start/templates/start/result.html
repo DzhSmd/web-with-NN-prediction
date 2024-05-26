@@ -17,32 +17,56 @@
             {% endif %}
         </div>
 
-        <p>
-            На {{present_value}} можно купить такие ценные бумаги:
-
-        </p>
+        <p> На {{present_value}} можно купить такие ценные бумаги:</p>
+        <table>
+            <tbody>
+                {% for index, row in list_to_buy_shares.iterrows %}
+                    <tr>
+                        {% if  row.numofshares_prval != 0 %}
+                            <td>{{row.name}} ({{row.ticker}}) в размере {{row.numofshares_prval}} шт., так как через {{days_future}} дней он вырастет на {{row.predicted_profit}}%</td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
         <p>
             {% if  start_sum != 0 %}
                 На {{r_with_start_sum_year}} можно купить такие ценные бумаги:
-
             {% else %}
                 На {{r_without_start_sum_year}} можно купить такие ценные бумаги:
-
             {% endif %}
-
         </p>
+        <table>
+            <tbody>
+                {% for index, row in list_to_buy_shares.iterrows %}
+                    <tr>
+                        {% if  row.numofshares_year != 0 %}
+                            <td>{{row.name}} ({{row.ticker}}) в размере {{row.numofshares_year}} шт., так как через {{days_future}} дней он вырастет на {{row.predicted_profit}}%</td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
         <p>
             {% if  start_sum != 0 %}
                 На {{r_with_start_sum_month}} можно купить такие ценные бумаги:
-
             {% else %}
                 На {{r_without_start_sum_month}} можно купить такие ценные бумаги:
-
             {% endif %}
-
         </p>
+        <table>
+            <tbody>
+                {% for index, row in list_to_buy_shares.iterrows %}
+                    <tr>
+                        {% if  row.numofshares_month != 0 %}
+                         <td>{{row.name}} ({{row.ticker}}) в размере {{row.numofshares_month}} шт., так как через {{days_future}} дней он вырастет на {{row.predicted_profit}}%</td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 <!--        <div class="single_investment">-->
 <!--            На {{present_value}} можно купить такие ценные бумаги:-->
 

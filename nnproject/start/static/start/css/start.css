@@ -11,7 +11,7 @@ body .features {
     width: 70%;
 }
 body .features h1 {font-size: 50px;}
-body .features p {max-width: 400px; margin: 20px auto;}
+body .features p {max-width: 400px; margin: 20px auto; font-size: 30px;}
 
 body .results {
     float: left;
@@ -26,11 +26,18 @@ body .results h1 {
     color: #E98074;
 }
 
-body .results p {
+body .results p, table{
     margin: 20px;
     font-size: 20px;
     color: #8E8D8A;
 }
+
+body .results tr {
+    padding-left: 50px;
+    font-size: 14px;
+    color: #8E8D8A;
+}
+
 .condition{
     text-align: center;
     font-size: 25px;
