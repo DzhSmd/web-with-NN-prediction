@@ -110,13 +110,6 @@ def result(request):
     list_to_buy_shares['numofshares_year'] = (val_one_shares_year / (list_to_buy_shares['current_price'] * list_to_buy_shares['lot'])).astype(int) * list_to_buy_shares['lot']
     list_to_buy_shares['numofshares_month'] = (val_one_shares_month / (list_to_buy_shares['current_price']* list_to_buy_shares['lot'])).astype(int) * list_to_buy_shares['lot']
 
-    # for i in range (len(list_to_buy_shares)):
-    #     # посчитать для каждой акции ее шт в каждом случае: единоразово, каждый год и месяц
-    #     list_to_buy_shares.at[i,'numofshares_prval'] = (val_one_shares_onetime / list_to_buy_shares.at[i,'current_price']).astype(int)
-    #     list_to_buy_shares.at[i,'numofshares_year'] = (val_one_shares_year / list_to_buy_shares.at[i,'current_price']).astype(int)
-    #     list_to_buy_shares.at[i,'numofshares_month'] = (val_one_shares_month / list_to_buy_shares.at[i,'current_price']).astype(int)
     list_to_buy_shares = list_to_buy_shares.dropna(subset=['numofshares_prval'])
-    # list_to_buy_shares_json = list_to_buy_shares.to_json(orient='split') # переводим json
-    data['list_to_buy_shares'] = list_to_buy_shares#_json
-    # print(list_to_buy_shares)
+    data['list_to_buy_shares'] = list_to_buy_shares
     return render(request, 'start/result.html', data)
